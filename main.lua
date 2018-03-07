@@ -32,3 +32,49 @@ blueGirl.y = 200
 --Output: none
 --Description: when blue girl is touched, move her
 local function BlueGirlListener(touch)
+
+	if(touch.phase == "began") then 
+		if (alreadyTouchedPinkGirl == false) then
+			alreadyTouchedBlueGirl = true
+		end
+	end
+
+	if ((touch.phase == "moved") and (alreadyTouchedBlueGirl == true)) then
+		blueGirl.x = touch.x
+		blueGirl.y = touch.y
+	end 
+
+	if (touch.phase == "ended") then
+	alreadyTouchedBlueGirl = false
+	alreadyTouchedPinkGirl = false
+end
+end
+
+--add the respective listeners to each project
+blueGirl: addEventListener("touch", BlueGirlListener)
+
+--Function: PinkGirlListener
+--Input: touch listener
+--Output: none
+--Description: when pink girl is touched, move her
+local function PinkGirlListener(touch)
+
+	if(touch.phase == "began") then 
+		if (alreadyTouchedBlueGirl == false) then
+			alreadyTouchedPinkGirl = true
+		end
+	end
+
+	if ((touch.phase == "moved") and (alreadyTouchedPinkGirl == true)) then
+		pinkGirl.x = touch.x
+		pinkGirl.y = touch.y
+	end 
+
+	if (touch.phase == "ended") then
+	alreadyTouchedPinkGirl = false
+	alreadyTouchedBlueGirl = false
+end
+end
+
+--add the respective listeners to each project
+pinkGirl: addEventListener("touch", PinkGirlListener)
