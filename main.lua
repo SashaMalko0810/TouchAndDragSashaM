@@ -7,7 +7,7 @@
 display.setStatusBar(display.HiddenStatusBar)
 
 --local variables. 
-local backgroundImage = display.newImageRect("Images/background.png", 2048, 1536)
+local backgroundImage = display.newImageRect("Images/maxresdefault.jpg", 2048, 1536)
 local pinkGirl = display.newImageRect("Images/Girl1.png", 150, 150)
 local pinkGirlWidth = pinkGirl.Width
 local pinkGirlHeight = pinkGirl.height
