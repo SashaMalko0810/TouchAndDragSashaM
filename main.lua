@@ -6,7 +6,7 @@
 --hide the status bar
 display.setStatusBar(display.HiddenStatusBar)
 
---local variables. 
+--local variables 
 local backgroundImage = display.newImageRect("Images/maxresdefault.jpg", 2048, 1536)
 local pinkGirl = display.newImageRect("Images/Girl1.png", 150, 150)
 local pinkGirlWidth = pinkGirl.Width
@@ -20,6 +20,12 @@ local blueGirlHeight = blueGirl.height
 local alreadyTouchedPinkGirl = false
 local alreadyTouchedBlueGirl = false
 
+--create local variables for sound
+local funkyElement = audio.loadSound("Sounds/funkyelement.mp3")
+local funkyElementChannel
+
+--play the background music
+funkyElementChannel = audio.play (funkyElement)
 --set the initial x and y position of myImage
 pinkGirl.x = 400
 pinkGirl.y = 500
