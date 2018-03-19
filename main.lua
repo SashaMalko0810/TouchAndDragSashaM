@@ -26,6 +26,7 @@ local funkyElementChannel
 
 --play the background music
 funkyElementChannel = audio.play (funkyElement)
+
 --set the initial x and y position of myImage
 pinkGirl.x = 400
 pinkGirl.y = 500
